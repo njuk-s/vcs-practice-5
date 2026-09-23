@@ -1,0 +1,10 @@
+# Все текстовые файлы хранятся с LF
+* text=auto eol=lf
+# Скрипты Windows оставляют CRLF
+*.bat text eol=crlf
+# Бинарные файлы: без diff и без правки концов строк
+*.png binary
+*.jpg binary
+*.docx binary
+# diff для Python показывает имя функции/класса
+*.py diff=python
