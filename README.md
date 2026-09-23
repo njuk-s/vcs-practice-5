@@ -5,4 +5,4 @@
 - `.gitignore` — какие файлы и папки не попадают в репозиторий
 - `.gitattributes` — как Git обрабатывает типы файлов (концы строк, бинарные файлы, diff)
 - `main.py` — точка входа, `student.py` — добавленный класс
-- `hg/`, `svn/` — то же самое в Mercurial и Subversion (локально)
+- `logs/hg.txt`, `logs/svn.txt` — те же шаги в Mercurial и Subversion (локальные репозитории)

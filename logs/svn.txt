@@ -1,0 +1,76 @@
+### Subversion
+++ svnadmin create svnrepo
++++ cygpath -m /c/Users/3060/vcs-practice-5-local
+++ URL=file:///C:/Users/3060/vcs-practice-5-local/svnrepo
+++ svn mkdir -q -m trunk --username njuk-s file:///C:/Users/3060/vcs-practice-5-local/svnrepo/trunk
+++ svn checkout -q file:///C:/Users/3060/vcs-practice-5-local/svnrepo/trunk wc
+++ cd wc
+++ svn propset svn:ignore -F - .
+property 'svn:ignore' set on '.'
+++ printf 'class Student:\n    def __init__(self, name):\n        self.name = name\n'
+++ echo junk
+++ svn add -q student.py
+++ svn status
+ M      .
+A       student.py
+++ svn commit -m "Р”РѕР±Р°РІР»РµРЅ РєР»Р°СЃСЃ Student, svn:ignore"
+++ printf '\n    def hello(self):\n        return "РџСЂРёРІРµС‚, " + self.name\n'
+++ svn commit -m "РњРµС‚РѕРґ hello"
+++ echo x
+++ svn add -q extra.txt
+++ svn commit -m "Р›РёС€РЅРёР№ С„Р°Р№Р»"
+++ svn delete -q extra.txt
+++ svn commit -m "РЈРґР°Р»С‘РЅ Р»РёС€РЅРёР№ С„Р°Р№Р»"
+++ cd ..
+++ rm -rf wc
+++ svn checkout -q file:///C:/Users/3060/vcs-practice-5-local/svnrepo/trunk wc2
+++ ls wc2
+student.py
+++ svn update wc2
+Updating 'wc2':
+At revision 5.
+++ svn log -v wc2
+------------------------------------------------------------------------
+r5 | njuk-s | 2026-09-23 17:04:21 +0300 (Ср, 23 сен 2026) | 1 line
+Changed paths:
+   D /trunk/extra.txt
+
+Удалён лишний файл
+------------------------------------------------------------------------
+r4 | njuk-s | 2026-09-23 17:04:21 +0300 (Ср, 23 сен 2026) | 1 line
+Changed paths:
+   A /trunk/extra.txt
+
+Лишний файл
+------------------------------------------------------------------------
+r3 | njuk-s | 2026-09-23 17:04:21 +0300 (Ср, 23 сен 2026) | 1 line
+Changed paths:
+   M /trunk/student.py
+
+Метод hello
+------------------------------------------------------------------------
+r2 | njuk-s | 2026-09-23 17:04:21 +0300 (Ср, 23 сен 2026) | 1 line
+Changed paths:
+   M /trunk
+   A /trunk/student.py
+
+Добавлен класс Student, svn:ignore
+------------------------------------------------------------------------
+r1 | njuk-s | 2026-09-23 17:04:20 +0300 (Ср, 23 сен 2026) | 1 line
+Changed paths:
+   A /trunk
+
+trunk
+------------------------------------------------------------------------
+++ svn diff -c 3 file:///C:/Users/3060/vcs-practice-5-local/svnrepo/trunk
+Index: student.py
+===================================================================
+--- student.py	(revision 2)
++++ student.py	(revision 3)
+@@ -1,3 +1,6 @@
+ class Student:
+     def __init__(self, name):
+         self.name = name
++
++    def hello(self):
++        return "РџСЂРёРІРµС‚, " + self.name
